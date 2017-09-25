@@ -1,8 +1,8 @@
-.header {
-	
-	}
+* {
+    box-sizing: border-box;
+}
 
-.head-container{
+.header {
 	background-color:#ffffff;
 	position:relative;
 	/*make sure background of header stays white*/
@@ -11,31 +11,19 @@
 	
 }
 
-/*negative margin used to create sticky footer. not 100% comprehending how this is working 
-but I am not too concerned, pretty sure this is a bit of a hacky way to do it that I wont
-ever use again.*/
 .container{
 	margin-bottom:-128px;
 	min-height:100%;
-}
-
-/*set page width for content*/
-.header,.content-main,footer {
 	width:960px;
 	margin:0 auto;
-
-	
 }
 
 .menu-links{
-	/*I think maybe link properties were not all cancelled in the reset.css, had to inherit these
-	to make sure they were styled as planned*/
 	color:inherit;
 	text-decoration: inherit;
 }
 
-/*had to hard code the padding to center vertically, would have liked to avoid this but couldn't
-get it to work.*/
+
 .menu {
 	list-style-type: none;
 	float:right;
@@ -105,8 +93,6 @@ h1 {
 
 }
 
-/*didn't apply classes or ids to several element types because I knew the exact scope of how
-and where I would be using those elements (for now)*/
 h1,h2,h3,div {
 	font-family: 'Georgia', Times, 'Times New Roman', serif;
 }
@@ -135,45 +121,34 @@ h3 {
 	margin-bottom:20px;
 }
 
-
-
 .content-main {
-	/*min-height:100%;*/
+	float:left;
 	
 }
 
-
-/*didn't like hard-coding the pixels here but thats the best I could do to create
-the desired look*/
 .content-main-primary {
-	width:588px;
+	float:left;
 	margin:40px;
 	margin-left:0;
-	float:left;
 	border:1px #dddddd solid;
 	background-color:#ffffff;
 	padding:30px;
-	
-	
-	
-
 }
 
-/*float right to move to top right of content area*/
 .content-main-secondary{
-
-	width:206px;
-	float:right;
 	margin-top:40px;
 	border:1px #dddddd solid;
 	background-color:#ffffff;
 	padding:30px;
-	
+	max-width:270px;
 }
 
 #aboutMeImage {
-	height:150px;
-	width:200px;
+	/*height:150px;
+	width:200px;*/
+	max-width:200px;
+	width:100%;
+	height:auto;
 	float:left;
 	margin-right:30px;
 
@@ -309,3 +284,82 @@ input[type=submit] {
 	background-color:#4aaaa5;
 	border:none;
 }
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+
+/*float all columns left */
+[class*="col-"] {
+    float: left;
+    /*border: 1px solid red;*/
+}
+
+#connect-links:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media only screen and (max-width: 980px) {
+    /* For mobile phones: */
+    .container {
+        width: 750px;
+    }
+    #aboutMeImage{
+    	max-width:395px;
+    	float:left;
+    	padding-bottom:10px;
+    }
+    #stackoverflow {
+		margin:0 6px;
+		padding-top:3px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .container {
+        width: 640px;
+    }
+    #aboutMeImage{
+    	max-width:250px;
+    	float:left;
+    	padding-bottom:10px;
+    }
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    .content-main-primary{
+    	margin-right:0px;
+    }
+    .content-main-secondary{
+    	max-width:247px;
+    }
+   /* #stackoverflow {
+		margin:0 6px;
+		padding-top:3px;*/
+}
+
+@media only screen and (max-width: 640px) {
+		.container{
+			width:100%;
+		}
+		 #aboutMeImage{
+    	max-width:100%;
+    	float:left;
+    	padding-bottom:10px;
+    }
+
+	}

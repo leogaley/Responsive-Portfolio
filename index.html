@@ -7,71 +7,84 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>About Me - Leo Galey</title>
 </head>
 
 <body>
 	<!-- Everything but the footer, used to help make sticky footer -->
-	<div class="container">
+	
 	
 	<!-- I think probably this is not best way to do it, but this HR is used to be the bottom border along the header (my header and main content containers are only 960px wide) -->
 	<hr id="hr-line">
 		
 		<!-- Header -->
-		<div class="head-container">
+		<!-- <div class="head-container"> -->
 
 			<div class="header">
 				
+				<div class="container">	
 				<!-- header menu -->
-				<div class="menu">
-					<ul>
-						<li id="menu-about"><a class="menu-links" href="index.html">About</a></li>
-						<li id="menu-portfolio"><a class="menu-links" href="portfolio.html">Portfolio</a></li>
-						<li id="menu-contact"><a class="menu-links" href="contact.html">Contact</a></li>
-					</ul>
-				
+					
+					<h1>Leo M Galey IV</h1>
+
+					<div class="menu">
+						<ul>
+							<li id="menu-about"><a class="menu-links" href="index.html">About</a></li>
+							<li id="menu-portfolio"><a class="menu-links" href="portfolio.html">Portfolio</a></li>
+							<li id="menu-contact"><a class="menu-links" href="contact.html">Contact</a></li>
+						</ul>
+					
+					</div>
+
+					
+
 				</div>
 
-				<h1>Leo M Galey IV</h1>
-
-				
 			</div>
 
-		</div>
+		<!-- </div> -->
 		
-		<!-- All content outside of header/footer -->
-		<div class ="content-main">
+	<div class="container">
+		
+		<div class ="content-main">  <!-- aka row 1 -->
 			
-			<!-- main content area (left side) -->
-			<div class="content-main-primary">
+			<div class="col-8">
 
-				<h2>About Me</h2>
+				<div class="content-main-primary">
 
-				
+					<h2>About Me</h2>
 
-				<div class="bio-content">
-					<img id="aboutMeImage" src="assets/images/profile-image_v2.jpg" alt="Profile Image">
-					<p> My name is Leo and I reside in Kearney, MO.  I have a passion for utilizing technology to help businesses run more efficiently.  This is what I try to do at KC Store Fixtures, where I am Netsuite Administrator and VP of Information Technology.  Netsuite is a cloud-based ERP system and I have had great success in customizing it to match our business processes (or vice versa in some cases).  To accomplish these improvements I have used: SuiteScript (built on JavaScript), PHP, SQL, and Web Services.  I like to do the problem-solving and process re-engineering without any specific technology in mind, then go figure out the best solution.  </p>
+					
 
-					<p>In my spare time I enjoy spending time with my 1 year old son (Leo V!) and wife, playing and watching sports, video games, reading biographies, watching documentaries, and playing pool.  Favorite TV show is The Wire and I have fully watched the series LOST more than once.  Favorite hobby in the world - Ultimate Frisbee.  
-					</p>
+					<div class="bio-content">
+						<img id="aboutMeImage" src="assets/images/profile-image_v2.jpg" alt="Profile Image">
+						<p> My name is Leo and I reside in Kearney, MO.  I have a passion for utilizing technology to help businesses run more efficiently.  This is what I try to do at KC Store Fixtures, where I am Netsuite Administrator and VP of Information Technology.  Netsuite is a cloud-based ERP system and I have had great success in customizing it to match our business processes (or vice versa in some cases).  To accomplish these improvements I have used: SuiteScript (built on JavaScript), PHP, SQL, and Web Services.  I like to do the problem-solving and process re-engineering without any specific technology in mind, then go figure out the best solution.  </p>
 
-					<p>I am a proud alum of the University of Missouri, where I graduated with a BS in Industrial Engineering and MBA.</p>
+						<p>In my spare time I enjoy spending time with my 1 year old son (Leo V!) and wife, playing and watching sports, video games, reading biographies, watching documentaries, and playing pool.  Favorite TV show is The Wire and I have fully watched the series LOST more than once.  Favorite hobby in the world - Ultimate Frisbee.  
+						</p>
+
+						<p>I am a proud alum of the University of Missouri, where I graduated with a BS in Industrial Engineering and MBA.</p>
+
+					</div>
 
 				</div>
-
-			</div>
 			
+			</div>
 			<!-- Connect with me box -->
-			<div class="content-main-secondary">
 
-				<h3>Connect with Me</h3>
+			<div class="col-4"> 
 
-				<div id="connect-links">
-					<a target=_"blank" href="https://www.linkedin.com/in/leo-galey-b9a1245b/"><img id="linkedin" src="assets/images/linkedin_2.png" alt="LinkedIn Link" name="LinkedIn"></a>
-					<a target=_"blank" href="https://stackoverflow.com/users/8481334/leo-galey?" name="Stack Overflow"><img id="stackoverflow" src="assets/images/stackoverflow.png" alt="Stack Overflow Link"></a>
-					<a target=_"blank" href="https://github.com/leogaley" name="Github"><img id="github" src="assets/images/github_2.png" alt="Github Link"></a>
+				<div class="content-main-secondary">
+
+					<h3>Connect with Me</h3>
+
+					<div id="connect-links">
+						<a target="_blank" href="https://www.linkedin.com/in/leo-galey-b9a1245b/"><img id="linkedin" src="assets/images/linkedin_2.png" alt="LinkedIn Link"></a>
+						<a target="_blank" href="https://stackoverflow.com/users/8481334/leo-galey?" ><img id="stackoverflow" src="assets/images/stackoverflow.png" alt="Stack Overflow Link"></a>
+						<a target="_blank" href="https://github.com/leogaley"><img id="github" src="assets/images/github_2.png" alt="Github Link"></a>
+
+					</div>
 
 				</div>
 
