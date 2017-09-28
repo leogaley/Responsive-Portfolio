@@ -87,7 +87,7 @@ html, body{
 	/*height:100%;*/
 	/*margin:0;*/
 	font-size:18px;
-	line-height:34px;
+	line-height:30px;
 	
 }
 
@@ -163,6 +163,7 @@ h3 {
 	height:auto;
 	float:left;
 	margin-right:30px;
+	margin-bottom:20px;
 
 
 }
@@ -326,6 +327,11 @@ input[type=submit] {
     /*border: 1px solid red;*/
 }
 
+#connect-links {
+  	display: flex;
+	justify-content:space-between;
+}
+
 #connect-links:after {
   content: "";
   display: table;
@@ -387,6 +393,10 @@ input[type=submit] {
     	margin-right:0px;
     }
     
+	#connect-links {
+		display:block;
+	} 
+
     #stackoverflow {
 		margin:0 6px;
 		padding-top:3px;
