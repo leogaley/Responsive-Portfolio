@@ -1,5 +1,5 @@
 
-/*border box to help make grid layout easier*/
+/*for easier grid layout*/
 * {
     box-sizing: border-box;
 }
@@ -12,12 +12,17 @@
 	background-color:white;
 	
 }
-
+/*hard coding content width at specified breaks*/
 .container{
-	margin-bottom:-128px;
+	margin:0 auto;
+	margin-bottom:-128px; 
 	min-height:100%;
 	width:960px;
-	margin:0 auto;
+	
+}
+
+.header.container{
+	margin-bottom:0 px;
 }
 
 .menu-links{
@@ -32,6 +37,8 @@
 	background-color:white;
 	padding:36.5px 0;
 	color:#c2b7b0;
+	font-size:15px;
+	line-height:1;
 	
 	}
 
@@ -79,8 +86,10 @@ html, body{
 	color:#777777;
 	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 	background-image:url(../images/ricepaper_v3.png);
-	height:100%;
-	margin:0;
+	/*height:100%;*/
+	/*margin:0;*/
+	font-size:18px;
+	line-height:30px;
 	
 }
 
@@ -95,7 +104,7 @@ h1 {
 
 }
 
-h1,h2,h3,div {
+h1,h2,h3 {
 	font-family: 'Georgia', Times, 'Times New Roman', serif;
 }
 
@@ -143,29 +152,38 @@ h3 {
 	background-color:#ffffff;
 	padding:30px;
 	max-width:270px;
+	
+
 }
 
 #aboutMeImage {
-	/*height:150px;
-	width:200px;*/
 	max-width:200px;
 	width:100%;
 	height:auto;
 	float:left;
 	margin-right:30px;
+	margin-bottom:20px;
 
 
 }
 
 /*set position relative so as to set the banner relative to image. float all images left, 
 content div has space for exactly 2 images, so it creates 2 columns*/
-.portfolio-image{
+.portfolio-image {
 	float:left;
-	width:270px;
-	height:200px;
-	margin:30px 12px;
+	width:45%;
+	height:auto;
+	margin:30px 2.5%;
+
 	position:relative;
 }
+
+.portfolio-image img {
+	float:left;
+	width:100%;
+	height:auto;
+}
+
 
 /*absolutely position within portfolio image, set z index to show over it*/
 .portfolio-banner{
@@ -176,9 +194,10 @@ content div has space for exactly 2 images, so it creates 2 columns*/
 	position:absolute;
 	bottom:10px;
 	height:24px;
-	width:270px;
+	width:100%;
 	text-align:center;
-	padding:15px 0;
+	padding:20px 0;
+	line-height:0;
 }
 
 .bio-content{
@@ -199,7 +218,7 @@ images in GIMP at the moment. */
 	width:54px;
 	height:54px;
 	float:left;
-	margin:0 16px;
+	margin:0 3px;
 	margin-top:3px;
 
 }
@@ -212,7 +231,7 @@ images in GIMP at the moment. */
 }
 
 p {
-	line-height:2;
+	
 	padding-bottom:30px;
 	
 	
@@ -264,7 +283,7 @@ footer {
 }
 
 input[type=text],input[type=email],textarea {
-	width:564px;
+	width:100%;
 	padding:10px;
 	margin-top:8px;
 	margin-bottom:14px;
@@ -286,8 +305,7 @@ input[type=submit] {
 	background-color:#4aaaa5;
 	border:none;
 }
-
-/*for 12-column grid*/
+/*for 12 column grid layout*/
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
@@ -305,6 +323,13 @@ input[type=submit] {
 /*float all columns left */
 [class*="col-"] {
     float: left;
+
+}
+
+/*hard coded my pixels on this in original homework, this is much easier.*/ 
+#connect-links {
+  	display: flex;
+	justify-content:space-between;
 }
 
 #connect-links:after {
@@ -313,16 +338,17 @@ input[type=submit] {
   clear: both;
 }
 
-
-
 @media only screen and (max-width: 980px) {
-   	/*hard-code container width at break point, under next break point so 
-   	it can't ever be wider*/
+    /*hard code content width (below the next break at 768, so it can't go off screen)*/
     .container {
         width: 750px;
     }
 
-    /*set image size that fits right at this width, based on pngs*/
+    .portfolio-image{
+    	width:100%;
+    	margin:0;
+    	margin-bottom:30px;
+    }
     #aboutMeImage{
     	max-width:395px;
     	float:left;
@@ -332,42 +358,112 @@ input[type=submit] {
 		margin:0 6px;
 		padding-top:3px;
 	}
+	
 }
 
 @media only screen and (max-width: 768px) {
-  
+    
     .container {
-        width: 640px;
+        width: 620px;
     }
+
+	.portfolio-image{
+    	width:45%;
+    	margin:2.5%;
+    	
+    }
+
     #aboutMeImage{
     	max-width:250px;
     	float:left;
     	padding-bottom:10px;
     }
-
-    /*make all columns 100%*/
+    /*set all column classes to full width*/
     [class*="col-"] {
         width: 100%;
     }
 
+    .content-main-secondary{
+			max-width: none;
+			padding:auto;
+		}
+
     .content-main-primary{
     	margin-right:0px;
     }
-    .content-main-secondary{
-    	max-width:247px;
-    }
-  
+    
+	#connect-links {
+		display:block;
+	} 
+
+    #stackoverflow {
+		margin:0 6px;
+		padding-top:3px;
+	}
+	#github {
+		float:left;
+	}
 }
 
 @media only screen and (max-width: 640px) {
-		/*make content fit full screen*/
 		.container{
 			width:100%;
 		}
-		 #aboutMeImage{
+
+		.portfolio-image{
+    	width:100%;
+    	margin:0;
+    	margin-bottom:30px;
+    	
+    	}
+		.content-main-primary, .content-main-secondary{
+			margin:15px;
+
+		}
+		
+
+
+		#connect-links{
+			width:100%;
+			margin-right:30px;
+		}
+		#aboutMeImage{
     	max-width:100%;
     	float:left;
     	padding-bottom:10px;
-    }
+    	}
+
+		h1{
+			display:block;
+			text-align:center;
+		}
+
+		.header {
+			text-align:center;
+		}
+		/*change menu spacing to fit under header logo*/
+		#menu-about,#menu-portfolio,#menu-contact {
+			width:33.33%;
+			margin:15px 0px;
+			border-right:1px #c2b7b0 solid;
+		}
+		
+		.menu {
+			width:100%;
+			padding:0;
+			border-bottom:1px #c2b7b0 solid ;
+			
+		}
+
+		#menu-contact{
+			border-right:none;
+		}
+
+		.push {
+			height:0px;
+		}
+
+
+		
 
 	}
