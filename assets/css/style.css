@@ -1,3 +1,5 @@
+
+/*border box to help make grid layout easier*/
 * {
     box-sizing: border-box;
 }
@@ -12,15 +14,10 @@
 }
 
 .container{
-	margin:0 auto;
-	margin-bottom:-128px; 
+	margin-bottom:-128px;
 	min-height:100%;
 	width:960px;
-	
-}
-
-.header.container{
-	margin-bottom:0 px;
+	margin:0 auto;
 }
 
 .menu-links{
@@ -35,8 +32,6 @@
 	background-color:white;
 	padding:36.5px 0;
 	color:#c2b7b0;
-	font-size:15px;
-	line-height:1;
 	
 	}
 
@@ -84,10 +79,8 @@ html, body{
 	color:#777777;
 	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 	background-image:url(../images/ricepaper_v3.png);
-	/*height:100%;*/
-	/*margin:0;*/
-	font-size:18px;
-	line-height:30px;
+	height:100%;
+	margin:0;
 	
 }
 
@@ -102,7 +95,7 @@ h1 {
 
 }
 
-h1,h2,h3 {
+h1,h2,h3,div {
 	font-family: 'Georgia', Times, 'Times New Roman', serif;
 }
 
@@ -150,9 +143,6 @@ h3 {
 	background-color:#ffffff;
 	padding:30px;
 	max-width:270px;
-	/*float:right;*/
-	/*width:100%;*/
-
 }
 
 #aboutMeImage {
@@ -163,28 +153,19 @@ h3 {
 	height:auto;
 	float:left;
 	margin-right:30px;
-	margin-bottom:20px;
 
 
 }
 
 /*set position relative so as to set the banner relative to image. float all images left, 
 content div has space for exactly 2 images, so it creates 2 columns*/
-.portfolio-image {
+.portfolio-image{
 	float:left;
-	width:45%;
-	height:auto;
-	margin:30px 2.5%;
-
+	width:270px;
+	height:200px;
+	margin:30px 12px;
 	position:relative;
 }
-
-.portfolio-image img {
-	float:left;
-	width:100%;
-	height:auto;
-}
-
 
 /*absolutely position within portfolio image, set z index to show over it*/
 .portfolio-banner{
@@ -195,10 +176,9 @@ content div has space for exactly 2 images, so it creates 2 columns*/
 	position:absolute;
 	bottom:10px;
 	height:24px;
-	width:100%;
+	width:270px;
 	text-align:center;
-	padding:20px 0;
-	line-height:0;
+	padding:15px 0;
 }
 
 .bio-content{
@@ -219,7 +199,7 @@ images in GIMP at the moment. */
 	width:54px;
 	height:54px;
 	float:left;
-	margin:0 3px;
+	margin:0 16px;
 	margin-top:3px;
 
 }
@@ -232,7 +212,7 @@ images in GIMP at the moment. */
 }
 
 p {
-	/*line-height:1.5;*/
+	line-height:2;
 	padding-bottom:30px;
 	
 	
@@ -284,7 +264,7 @@ footer {
 }
 
 input[type=text],input[type=email],textarea {
-	width:100%;
+	width:564px;
 	padding:10px;
 	margin-top:8px;
 	margin-bottom:14px;
@@ -307,6 +287,7 @@ input[type=submit] {
 	border:none;
 }
 
+/*for 12-column grid*/
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
@@ -324,12 +305,6 @@ input[type=submit] {
 /*float all columns left */
 [class*="col-"] {
     float: left;
-    /*border: 1px solid red;*/
-}
-
-#connect-links {
-  	display: flex;
-	justify-content:space-between;
 }
 
 #connect-links:after {
@@ -338,17 +313,16 @@ input[type=submit] {
   clear: both;
 }
 
+
+
 @media only screen and (max-width: 980px) {
-    /* For mobile phones: */
+   	/*hard-code container width at break point, under next break point so 
+   	it can't ever be wider*/
     .container {
         width: 750px;
     }
 
-    .portfolio-image{
-    	width:100%;
-    	margin:0;
-    	margin-bottom:30px;
-    }
+    /*set image size that fits right at this width, based on pngs*/
     #aboutMeImage{
     	max-width:395px;
     	float:left;
@@ -358,126 +332,42 @@ input[type=submit] {
 		margin:0 6px;
 		padding-top:3px;
 	}
-	/*.content-main-secondary{
-		float:left;
-	}*/
 }
 
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
+  
     .container {
-        width: 620px;
+        width: 640px;
     }
-
-	.portfolio-image{
-    	width:45%;
-    	margin:2.5%;
-    	
-    }
-
     #aboutMeImage{
     	max-width:250px;
     	float:left;
     	padding-bottom:10px;
     }
+
+    /*make all columns 100%*/
     [class*="col-"] {
         width: 100%;
     }
 
-    .content-main-secondary{
-			max-width: none;
-			padding:auto;
-		}
-
     .content-main-primary{
     	margin-right:0px;
     }
-    
-	#connect-links {
-		display:block;
-	} 
-
-    #stackoverflow {
-		margin:0 6px;
-		padding-top:3px;
-	}
-	#github {
-		float:left;
-	}
+    .content-main-secondary{
+    	max-width:247px;
+    }
+  
 }
 
 @media only screen and (max-width: 640px) {
+		/*make content fit full screen*/
 		.container{
 			width:100%;
 		}
-
-		.portfolio-image{
-    	width:100%;
-    	margin:0;
-    	margin-bottom:30px;
-    	
-    	}
-		.content-main-primary, .content-main-secondary{
-			margin:15px;
-
-		}
-		
-
-
-		#connect-links{
-			width:100%;
-			margin-right:30px;
-		}
-		#aboutMeImage{
+		 #aboutMeImage{
     	max-width:100%;
     	float:left;
     	padding-bottom:10px;
-    	}
-
-		h1{
-			display:block;
-			text-align:center;
-		}
-
-		.header {
-			text-align:center;
-		}
-
-		#menu-about,#menu-portfolio,#menu-contact {
-			width:33.33%;
-			margin:15px 0px;
-			border-right:1px #c2b7b0 solid;
-		}
-
-		.menu {
-			width:100%;
-			padding:0;
-			border-bottom:1px #c2b7b0 solid ;
-			/*float:none;*/
-		}
-
-		#menu-contact{
-			border-right:none;
-		}
-
-		.push {
-			height:0px;
-		}
-
-
-		
-		/*#menu-portfolio {
-			padding-right:20px;
-			padding-left:20px;
-			border-right:1px #c2b7b0 solid;
-		}
-
-		
-		#menu-contact {
-			padding-left:20px;
-
-		}
-*/
-
+    }
 
 	}
